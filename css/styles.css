@@ -26,9 +26,10 @@ header.main .logo {
 	text-align: center;
 	display: inline-block;
 	margin: 0 auto;
-	font-size: 2em;
+	font-size: 1.75em;
 	letter-spacing: 2px;
 	color: #fff;
+	padding: 0 20px;
 }
 
 header.main .logo * {
@@ -84,43 +85,43 @@ header.main .logo .name {
 	flex-direction: column;
 	padding: 10px;
 	border-right: 1px solid #eee;
-	text-align: center;
+	justify-content: center;
+	align-items: center;
 }
 
 .emotion .book .cell.persons {
 	flex-direction: row;
+	width: 100%;
+	padding: 0;
 }
 
 .emotion .book .cell .half {
-	text-align: center;
+	width: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
+	flex-wrap: wrap;
+	border-right: 1px solid #eee;
+	padding: 10px;
 }
 
-@media (min-width: 992px) {
-	.emotion .book .cell,
-	.emotion .book button {
-		width: 25%;
-	}
-	.emotion .book .cell .half {
-		width: 50%;
-		display: flex;
-	}
-	.emotion .book {
-		font-size: 1.5em;
-	}
-	.emotion .book .cell {
-		padding: 30px;
-		flex-direction: row;
-	}
-}
-
-.emotion .book .cell:last-child {
+.emotion .book .check-out,
+.emotion .book .cell .half:last-child {
 	border-right: 0 none;
 }
 
+.emotion .book .check-in,
+.emotion .book .check-out {
+	border-bottom: 1px solid #eee;
+}
+
 .emotion .book .cell .label {
-	color: #666;
-	font-size: 0.9em;
-	margin-right: 10px;
+    color: #666;
+    font-size: 0.9em;
+    display: block;
+    width: 100%;
+    text-align: center;
 }
 
 .emotion .book button {
@@ -132,4 +133,37 @@ header.main .logo .name {
 	font-size: 1em;
 	outline: 0 none;
 	cursor: pointer;
+	width: 100%;
+	padding: 25px;
+}
+
+@media (min-width: 992px) {
+	.emotion .book .cell,
+	.emotion .book .cell.persons,
+	.emotion .book button {
+		width: 25% !important;
+	}
+	.emotion .book {
+		font-size: 1.5em;
+	}
+	.emotion .book .cell {
+		padding: 30px;
+		flex-direction: row;
+	}
+	.emotion .book .check-in,
+	.emotion .book .check-out {
+		border-bottom: 0 none;
+	}
+	.emotion .book .cell .half,
+	.emotion .book .cell.persons {
+		border-right: 0 none;
+	}
+	.emotion .book .check-out,
+	.emotion .book .cell .half:last-child {
+		border-right: 1px solid #eee;
+	}
+	.emotion .book .cell .label {
+		margin-right: 10px;
+		width: auto;
+	}
 }
