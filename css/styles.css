@@ -53,9 +53,13 @@ header.main .logo .name {
 }
 
 .emotion {
-	height: 100vh;
+	height: 75vh;
 	width: 100%;
-	min-height: 500px;
+}
+
+.emotion .bg {
+	height: 75vh;
+	width: 100%;
 	background-image: url(https://images.pexels.com/photos/1267473/pexels-photo-1267473.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
 	background-position: center center;
 	background-size: cover;
@@ -63,8 +67,35 @@ header.main .logo .name {
 	position: relative;
 }
 
+.chevron::before {
+	border-style: solid;
+	border-color: #ccc;
+    border-width: 3px 3px 0 0;
+    content: '';
+    display: inline-block;
+    height: 14px;
+    left: 9px;
+    position: relative;
+    width: 14px;
+}
+
+.chevron.right:before {
+	left: 0;
+	transform: rotate(45deg);
+}
+
+.chevron.bottom:before {
+	top: -5px;
+	left: 0;
+	transform: rotate(135deg);
+}
+
+.chevron.left:before {
+	left: 0.25em;
+	transform: rotate(-135deg);
+}
+
 .emotion .book {
-	position: absolute;
 	bottom: 0;
 	width: 100%;
 	z-index: 1;
@@ -87,6 +118,10 @@ header.main .logo .name {
 	border-right: 1px solid #eee;
 	justify-content: center;
 	align-items: center;
+}
+
+.emotion .book .cell:hover {
+	cursor: pointer;
 }
 
 .emotion .book .cell.persons {
@@ -117,11 +152,12 @@ header.main .logo .name {
 }
 
 .emotion .book .cell .label {
-    color: #666;
-    font-size: 0.9em;
+    color: #aaa;
+    font-size: 0.8em;
     display: block;
     width: 100%;
     text-align: center;
+    text-transform: uppercase;
 }
 
 .emotion .book button {
@@ -137,22 +173,30 @@ header.main .logo .name {
 	padding: 25px;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1200px) {
+	.emotion,
+	.emotion .bg {
+		height: 100vh;
+	}
+	.emotion .book {
+		font-size: 1.1em;
+		position: absolute;
+	}
 	.emotion .book .cell,
 	.emotion .book .cell.persons,
 	.emotion .book button {
 		width: 25% !important;
 	}
-	.emotion .book {
-		font-size: 1.5em;
-	}
 	.emotion .book .cell {
-		padding: 30px;
 		flex-direction: row;
 	}
 	.emotion .book .check-in,
 	.emotion .book .check-out {
 		border-bottom: 0 none;
+	}
+	.emotion .book .check-in .chevron:before,
+	.emotion .book .check-out .chevron:before {
+		left: 10px;
 	}
 	.emotion .book .cell .half,
 	.emotion .book .cell.persons {
@@ -164,6 +208,7 @@ header.main .logo .name {
 	}
 	.emotion .book .cell .label {
 		margin-right: 10px;
+		margin-top: 5px;
 		width: auto;
 	}
 }
