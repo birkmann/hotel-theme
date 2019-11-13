@@ -1,0 +1,135 @@
+body {
+	font: 14px/1.6em 'Open Sans', sans-serif;
+	margin: 0;
+}
+
+*,::after,::before{ box-sizing:border-box; }
+
+.container {
+	max-width: 1400px;
+	margin: 0 auto;
+}
+
+header.main {
+	position: fixed;
+	width: 100%;
+	padding: 50px 0;
+	z-index: 100;
+}
+
+header.main .container {
+	display: flex;
+}
+
+header.main .logo {
+	text-decoration: none;
+	text-align: center;
+	display: inline-block;
+	margin: 0 auto;
+	font-size: 2em;
+	letter-spacing: 2px;
+	color: #fff;
+}
+
+header.main .logo * {
+	display: block;
+}
+
+header.main .logo .pre,
+header.main .logo .sub {
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	font-size: 0.9em;
+}
+
+header.main .logo .name {
+	font-family: 'Sansita', serif;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 3em;
+    line-height: 1.2em;
+    margin-top: -20px;
+}
+
+.emotion {
+	height: 100vh;
+	width: 100%;
+	min-height: 500px;
+	background-image: url(https://images.pexels.com/photos/1267473/pexels-photo-1267473.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+	background-position: center center;
+	background-size: cover;
+	background-repeat: none;
+	position: relative;
+}
+
+.emotion .book {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	z-index: 1;
+	background: #fff;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	width: 100%;
+}
+
+.emotion .book .cell,
+.emotion .book button {
+	width: 50%;
+}
+
+.emotion .book .cell {
+	display: flex;
+	flex-direction: column;
+	padding: 10px;
+	border-right: 1px solid #eee;
+	text-align: center;
+}
+
+.emotion .book .cell.persons {
+	flex-direction: row;
+}
+
+.emotion .book .cell .half {
+	text-align: center;
+}
+
+@media (min-width: 992px) {
+	.emotion .book .cell,
+	.emotion .book button {
+		width: 25%;
+	}
+	.emotion .book .cell .half {
+		width: 50%;
+		display: flex;
+	}
+	.emotion .book {
+		font-size: 1.5em;
+	}
+	.emotion .book .cell {
+		padding: 30px;
+		flex-direction: row;
+	}
+}
+
+.emotion .book .cell:last-child {
+	border-right: 0 none;
+}
+
+.emotion .book .cell .label {
+	color: #666;
+	font-size: 0.9em;
+	margin-right: 10px;
+}
+
+.emotion .book button {
+	text-transform: uppercase;
+	background: #ffc600;
+	color: #000;
+	display: block;
+	border: 0 none;
+	font-size: 1em;
+	outline: 0 none;
+	cursor: pointer;
+}
