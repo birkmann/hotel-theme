@@ -53,12 +53,12 @@ header.main .logo .name {
 }
 
 .emotion {
-	height: 75vh;
+	height: 50vh;
 	width: 100%;
 }
 
 .emotion .bg {
-	height: 75vh;
+	height: 50vh;
 	width: 100%;
 	background-image: url(https://images.pexels.com/photos/1267473/pexels-photo-1267473.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
 	background-position: center center;
